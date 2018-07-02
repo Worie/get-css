@@ -5,7 +5,7 @@ module.exports = function getLinkContents(linkUrl, options) {
   var d = q.defer()
 
   // expect linked css content
-  if (!/\.css$/i.test(linkUrl)) {
+  if (!/\.css\?{0,1}.*/i.test(linkUrl)) {
     d.resolve('')
     return d.promise
   }
